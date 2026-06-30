@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Car Rental — fast, easy, and affordable car rentals. Book cars, manage bookings, offers and more." />
+  <meta name="keywords" content="car rental, car hire, rent a car, vehicle rental, booking" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Car Rental" />
+  <meta property="og:description" content="Fast, easy, and affordable car rentals. Book your ride online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://car-rental-orpin-psi.vercel.app/" />
+  <meta property="og:image"
+    content="https://res.cloudinary.com/dxuxjz0tx/image/upload/v1780757470/photo-output_ergh88.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Car Rental" />
+  <meta name="twitter:description" content="Fast, easy, and affordable car rentals." />
+  <meta name="twitter:image"
+    content="https://res.cloudinary.com/dxuxjz0tx/image/upload/v1780757470/photo-output_ergh88.png" />
+
+  <!-- fav-cons -->
+  <link rel="icon" type="image/png"
+    href="https://res.cloudinary.com/dxuxjz0tx/image/upload/v1780757470/photo-output_ergh88.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Android Chrome -->
+  <meta name="theme-color" content="#2d9372" />
+  <!-- Mobile Web App -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Car Rental</title>
+</head>
+
+<body>
+  <div id="root">
+    <!-- Static loading screen shown before React mounts -->
+    <style>
+      #initial-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #b5ecff38;
+      }
+
+      #initial-loader img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        animation: logo-pulse 1.5s ease-in-out infinite;
+      }
+
+      @keyframes logo-pulse {
+
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+
+        50% {
+          opacity: 0.6;
+          transform: scale(0.92);
+        }
+      }
+    </style>
+    <div id="initial-loader">
+      <img
+        src="https://res.cloudinary.com/dxuxjz0tx/image/upload/v1781095847/3A644144-D82C-4CFE-B8DD-4DD819D4382C_pbuetu.png"
+        alt="Loading..." />
+    </div>
+  </div>
+  <script type="module">
+    // Remove initial loader once React mounts
+    const root = document.getElementById('root');
+    const observer = new MutationObserver(() => {
+      const loader = document.getElementById('initial-loader');
+      if (loader && root.children.length > 1) loader.remove();
+      observer.disconnect();
+    });
+    observer.observe(root, { childList: true });
+  </script>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
